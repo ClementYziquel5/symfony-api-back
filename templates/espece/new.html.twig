@@ -1,0 +1,33 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Créé un nouvel élément dans la table espece
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Création Espece{% endblock %}
+
+{% block body %}
+    <h1>Création d'une nouvelle Espece</h1>
+
+    {{ include('espece/_form.html.twig') }}
+
+    <a href="{{ path('espece_index') }}">Retour à la liste</a>
+{% endblock %}

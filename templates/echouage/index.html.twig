@@ -1,0 +1,60 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Page d'accueil de la table echouage
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Echouage{% endblock %}
+
+{% block body %}
+    <h1>Affichage des Echouages</h1>
+
+    <a href="{{ path('echouage_new') }}">Créer un nouvel échouage</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Nombre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for echouage in echouages %}
+            <tr>
+                <td>{{ echouage.id }}</td>
+                <td>{{ echouage.date }}</td>
+                <td>{{ echouage.nombre }}</td>
+                <td>
+                    <a href="{{ path('echouage_show', {'id': echouage.id}) }}">Afficher</a>
+                    <a href="{{ path('echouage_edit', {'id': echouage.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

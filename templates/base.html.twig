@@ -1,0 +1,41 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Squelette de base du back-office
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% block stylesheets %}
+        <link rel="stylesheet" href="/style.css">
+        {% endblock %}
+
+    </head>
+    <body>
+        {% include 'header.html.twig' %}
+        <div class='wrapper'>
+            {% block body %}{% endblock %}
+        </div
+        {% include 'footer.html.twig' %}
+    </body>
+</html>

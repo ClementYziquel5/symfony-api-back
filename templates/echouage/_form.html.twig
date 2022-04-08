@@ -1,0 +1,26 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Formulaire de d'ajout ou de modification d'un élément de la table echouage
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

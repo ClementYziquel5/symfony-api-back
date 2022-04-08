@@ -1,0 +1,63 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Page d'accueil pour la recherche back-office via un formulaire
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <h1>Accueil</h1>
+    
+        
+    <form action='search'>
+            <div class='zone_select'>
+                <label>Sélectionner une zone: </label>
+                <select name='zone'>
+                    <option value='0'>Toutes les zones</option>
+                    {% for zone in zones %}
+                        <option value='{{zone.id}}'>
+                            {{zone.zone}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class='espece_select'>
+                <label>Sélectionner une espece: </label>
+                <select name='espece' required>
+                    <option selected value=''>--Choisir une espece--</option>
+                    {% for espece in especes %}
+                        <option value='{{espece.id}}'>
+                            {{espece.espece}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <input type="submit" value="Rechercher">
+        </form>
+
+
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Formulaire de suppression d'un élément de la table zone
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+<form method="post" action="{{ path('zone_delete', {'id': zone.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cet item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ zone.id) }}">
+    <button class="btn">Supprimer</button>
+</form>

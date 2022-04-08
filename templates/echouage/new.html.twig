@@ -1,0 +1,33 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Créé un nouvel élément dans la table echouage
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Echouage{% endblock %}
+
+{% block body %}
+    <h1>Entrée d'un nouvel Echouage</h1>
+
+    {{ include('echouage/_form.html.twig') }}
+
+    <a href="{{ path('echouage_index') }}">Retour à la liste</a>
+{% endblock %}

@@ -1,0 +1,58 @@
+{#  
+            \\\||||||////
+             \\  ~ ~  //
+              (  @ @  )
+___________ oOOo-(_)-oOOo________________
+.......
+....... 2021-2022 - Mini projet Framework Symfony - ReactJS
+.......
+....... @author Mathis QUEMENER (mathis.quemener@isen-ouest.yncrea.fr) - Clément YZIQUEL (clement.yziquel@isen-ouest.yncrea.fr)
+....... 
+....... @version 1.0
+....... 
+....... Page d'accueil de la table espece
+.......
+__________________Oooo.__________________
+         .oooO    (   )
+         (   )     ) /
+          \ (     (_/
+           \_)
+
+#}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Espece{% endblock %}
+
+{% block body %}
+    <h1>Affichage des Especes</h1>
+
+    <a href="{{ path('espece_new') }}">Créer une nouvelle espece</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Espece</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for espece in especes %}
+            <tr>
+                <td>{{ espece.id }}</td>
+                <td>{{ espece.espece }}</td>
+                <td>
+                    <a href="{{ path('espece_show', {'id': espece.id}) }}">Afficher</a>
+                    <a href="{{ path('espece_edit', {'id': espece.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
